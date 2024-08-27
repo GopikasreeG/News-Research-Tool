@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;  
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .login-container {
+            background: rgba(244, 238, 238, 0.471);
+            backdrop-filter: blur(10px);  
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            width: 300px;
+        }
+
+        .login-container h1 {
+            color: #fff;
+            margin-top: 10px; 
+            margin-bottom: 0; 
+        }
+
+        .input-container {
+            margin-bottom: 30px; 
+        }
+
+        .input-container input {
+            width: 250px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #efe5e544;
+            color: #fff;
+        }
+
+        .input-container input::placeholder {
+            color: #f5f6f6;
+        }
+
+        .login-button {
+            width: 80px;  
+            padding: 8px;  
+            border: none;
+            border-radius: 5px;
+            background: #0f0e0e;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .login-button:hover {
+            background: #ff6666;
+        }
+
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .background-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://static.vecteezy.com/system/resources/previews/014/172/132/non_2x/abstract-digital-wave-of-particles-flow-vector.jpg') no-repeat center center;
+            background-size: cover;
+            opacity: 0.5;  
+        }
+
+        .login-image {
+            width: 100px; 
+            height: 100px; 
+            margin-bottom: 1px; 
+        }
+
+        .back-link {
+            position: absolute;
+            bottom: 10px; /* Adjust as needed */
+            left: 10px; /* Adjust as needed */
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="https://www.paysii.com/assets/images/user.svg" alt="Logo" class="login-image">
+        <h1>Login</h1><br><br>
+        <form method="post">
+            {% csrf_token %}
+            <div class="input-container">
+                <input placeholder="Username" {{ form.username }}
+            </div>
+            <div class="input-container">
+                <input placeholder="Password" {{ form.password }}
+            </div>
+            <button class="login-button" type="submit">Login</button>
+        </form>
+        
+        <p>Don't have an Account?<a href="{% url 'signin' %}">Sign in</a></p>
+        <p class="back-link"><a href="{% url 'index' %}">Back to Home</a></p>
+    </div>
+    <div class="background-animation"></div>
+</body>
+</html>

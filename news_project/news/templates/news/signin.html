@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <style>
+        body {
+            background-image: url('https://static.vecteezy.com/system/resources/previews/028/634/204/large_2x/bright-neon-wave-background-free-photo.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            text-align: center;
+            color:#3a3a3a;
+            margin-bottom: 10px;
+        }
+        .form-container {
+            max-width: 300px;
+            background: rgba(244, 238, 238, 0.471);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 1s ease-in-out;
+            text-align: center;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .signup-image {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px; /* Reduced the margin */
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 4px;
+            background-color: #3a3a3a;
+            color: #ffffff;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #f6ee9b;
+            transform: translateY(-3px);
+        }
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+        p a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        p a:hover {
+            color: #007bff;
+        }
+        p a::before {
+            content: "\2190"; /* Left arrow */
+            margin-right: 8px;
+        }
+        .helptext {
+            display: none; /* Hide the help text */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <img src="https://cdn2.iconfinder.com/data/icons/business-dual-color-glyph-set-8/128/add_user-512.png" alt="Logo" class="signup-image">
+        <h1>Sign Up</h1>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="username" id="id_username" placeholder="Username">
+            <input type="password" name="password1" id="id_password1" placeholder="Password">
+            <input type="password" name="password2" id="id_password2" placeholder="Confirm Password">
+            <button type="submit">Sign Up</button>
+        </form>
+        <p><a href="{% url 'index' %}">Back to Home</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Research Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to left, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
+                        url('https://t3.ftcdn.net/jpg/04/28/83/30/360_F_428833035_BDo0pMjhuQalr8ifzjGxocLWNifEtz4u.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #333; /* Logo text color */
+        }
+        .logo span {
+            margin-left: 5px; /* Space between symbol and name */
+            font-weight: bold; /* Make name bold */
+        }
+        button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #ff0000;
+            color: white;
+        }
+        button:hover {
+            background-color: #4791e1;
+        }
+        main {
+            display: flex;
+            align-items: center; /* Center vertically */
+            justify-content: space-between; /* Space between text and image */
+            padding: 0 50px;
+            height: calc(100vh - 50px); /* Adjust for header height */
+        }
+        .main-content {
+            color: rgb(200, 227, 91);
+            max-width: 50%; /* Limit text width */
+            margin-top: -100px; /* Move content higher */
+        }
+        .main-content h1, .main-content h3 {
+            margin-top: 0;
+        }
+        .main-image img {
+            max-width: 500px;
+            height: auto;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span>🚀</span> <!-- Symbol -->
+            <span>LIFE OF TRENDS</span> <!-- Name -->
+        </div>
+        <div>
+            <a href="{% url 'login' %}">
+                <button>Login</button>
+            </a>
+            <a href="{% url 'signin' %}">
+                <button>Sign In</button>
+            </a>
+        </div>
+    </header>
+    <main>
+        <div class="main-content">
+            <h1>Summarize,</h1>
+            <h1> Analyze, </h1>
+            <h1> Stay Informed</h1><br>
+            <h3>A robust news research tool is essential in the digital age,
+                 enabling users to quickly summarize articles and extract critical keywords for better
+                  information management and understanding.</h3>
+        
+            
+        </div>
+        <div class="main-image">
+            <img src="https://www.scribendi.com/images/cms/Blog_2022/Research_Databases.png" alt="Right side image"> <!-- Replace with your image URL -->
+        </div>
+        
+    </main>
+</body>
+</html>
